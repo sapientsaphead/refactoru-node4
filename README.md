@@ -1,6 +1,6 @@
 ### Magellan's Voyage
 
-![Alt text](http://foglobe.com/ferdinand-magellan.html)
+![Alt text](http://foglobe.com/data_images/main/ferdinand-magellan/ferdinand-magellan-08.jpg)
 
 #### Objective
 
