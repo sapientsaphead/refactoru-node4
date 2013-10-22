@@ -1,0 +1,18 @@
+When do I make the Ajax request?
+	Each time you click on the next button
+
+What should happen when the user clicks the Next button?
+	It should grab the next page. Not sure how it knows which is the next page but it should know.
+	Array of links?
+
+What URL should the AJAX request be sent to?
+	Great question! I don't know.
+
+What response should the AJAX request return to the client?
+
+
+How can I simulate a page change when the response comes back?
+	Dynamic insertion with jQuery & Handlebars
+
+What's the best way to render the data from the server to the client?
+	Handlebars?
