@@ -4,8 +4,8 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
+// var routes = require('./routes');
+// var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -31,7 +31,9 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
-app.get('/users', user.list);
+// app.get('/users', user.list);
+
+// routes
 
 app.get('/route', function(req, res){
 	var magellanRoute = {
@@ -52,7 +54,7 @@ app.get('/route', function(req, res){
 		next : "Guam"
 		},
 		"Guam" : { stop : "Guam",
-		desc : 'Heading northwest, the crew reached the equator on 13 February 1521. On 6 March they reached the Marianas and Guam. Magellan called Guam the "Island of Sails" because they saw a lot of sailboats. They renamed as Ladrones Island (Island of Thieves) because many of the small boats of Trinidad were stolen there.',
+		desc : 'Heading northwest, the crew reached the equator on 13 February 1521. On 6 March they reached the Marianas and Guam. Magellan called Guam the \"Island of Sails\" because they saw a lot of sailboats. They renamed as Ladrones Island (Island of Thieves) because many of the small boats of Trinidad were stolen there.',
 		next : "Phillipines"
 		},
 		"Phillipines" : { stop : "Phillipines",
@@ -60,9 +62,13 @@ app.get('/route', function(req, res){
 		next : "Seville"
 		}
 	}
-	
-	res.send(req.query);
-	
+	// get next object id
+	var next = function next (o, id) {
+		if(id in magellanRoute) {
+			return magellanRoute[id];
+		}
+	}
+	res.send(next(magellanRoute, req.query.name));
 })
 
 

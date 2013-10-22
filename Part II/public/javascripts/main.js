@@ -1,24 +1,19 @@
 $(function(){
-        var source   = $("#search-results-template").html();
-        var searchTemplate = Handlebars.compile(source);
-        var $results = $('#results')
+        var source = $("#magellanStops").html();
+        var routeTemplate = Handlebars.compile(source);
+        var $results = $('#results');
 
-        $('#search').on('keyup', function(e){
-                if(e.keyCode === 13){
-                        // do something
-                        var val = $(this).val()
-                        console.log("val variable", val)
-                        $(this).val("");
-                        //route url, data that you're sending to server, 
-                        // {search:val} = /search?search=val
-                        // callback - the function
-                        $.get('/search', {search : val}, function(data){
-                                console.log("weird object - data", {search : val});
-                                //data is not getting anything - where is it supposed to get 
-                                //value from?
-                                console.log("i should be a key value pair",data)
-                                $results.html(searchTemplate(data))
-                        });
-                }
+        $.get('/route', {name : 'Seville'}, function(data){
+                // pre-populates index with Seville object
+                $results.html(routeTemplate(data))
+        });
+
+        $(document).on('click', 'button', function(e){
+                // gets data-stop value
+                var stop = $('button').data('stop');
+                // uses data-stop value to get object with that id
+                $.get('/route', {name : stop}, function(data){
+                        $results.html(routeTemplate(data))
+                });
         });
 });
