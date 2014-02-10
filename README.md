@@ -1,6 +1,6 @@
 ### Magellan's Voyage
 
-![Alt text](http://foglobe.com/data_images/main/ferdinand-magellan/ferdinand-magellan-08.jpg)
+![Alt text](http://www.biography.com/imported/images/Biography/Images/Profiles/M/Ferdinand-Magellan-9395202-1-402.jpg)
 
 #### Objective
 
